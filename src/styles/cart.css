@@ -1,0 +1,40 @@
+.container{
+    display:flex;
+    flex-direction: row;
+    border: 1px solid red;
+    width:1300px;
+    margin:auto;
+
+}
+
+
+.products{
+    display:flex;
+    flex-wrap: wrap;
+    width:1050px;
+    border:1px solid black;
+}
+
+.right{
+    border:1px solid pink;
+    width:1060px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.oneproduct{
+width:252px;
+border:1px solid blue;
+margin:0 5px;
+
+}
+
+.oneproduct img{
+    width:240px;
+}
+
+.sizes{
+    width:250px;
+    border:1px solid green;
+}
