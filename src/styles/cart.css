@@ -8,11 +8,22 @@
 }
 
 
+
 .products{
     display:flex;
     flex-wrap: wrap;
     width:1050px;
     border:1px solid black;
+}
+
+.products:hover{
+    cursor: pointer;
+
+}
+
+.oneproduct:hover button.btn{
+    background:rgb(207, 122, 23);
+    cursor: pointer;
 }
 
 .right{
@@ -25,16 +36,68 @@
 
 .oneproduct{
 width:252px;
-border:1px solid blue;
-margin:0 5px;
+margin:10px 3px;
+padding:10px;
+border:1px solid transparent;
+
 
 }
 
+.oneproduct:hover{
+    border:1px solid #ddd;
+}
 .oneproduct img{
     width:240px;
 }
 
-.sizes{
-    width:250px;
+.cartContainer{
+    width:450px;
+    position: fixed;
+    right:0;
+    height: 100%;
+    /* float:right; */
+    z-index: 10px;
+    color:white;
+    background-color: black;
     border:1px solid green;
+    
 }
+.cartSections{
+    height: 100%;
+overflow-y: scroll;
+display: block;
+background-color: black;;
+}
+.cartSections header{
+    display: block;
+    border:1px solid red;
+}
+.cartSections .cartItems{
+    position:relative;
+    /* border:1px solid green; */
+    min-heigh:280px;
+    padding-bottom:200px;
+}
+.cartSections footer{
+    position: absolute;
+    bottom:0px;
+    height:200px;
+    width:100%;
+    display:block;
+    background-color: black;;
+    border:1px solid yellow;
+}
+
+/* Track */
+.cartSections::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .cartSections::-webkit-scrollbar-track {
+    background: #444; 
+  }
+   
+  /* Handle */
+  .cartSections::-webkit-scrollbar-thumb {
+    background: #000; 
+  }
