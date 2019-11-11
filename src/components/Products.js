@@ -8,7 +8,7 @@ export default function (props){
     
 
     function installments (number, price){
-       return number ? ("or " + number + " x " + parseFloat(parseFloat((price/number).toFixed(2))).toFixed(2)): ""
+       return number ? ("or " + number + " x " + parseFloat(parseFloat((price/number).toFixed(2))).toFixed(2)): " - "
     }
 
 function handleClick(id){
