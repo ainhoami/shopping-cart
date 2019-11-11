@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import store from '../redux/store'
 import Products from "./Products"
 import Size from "./Size"
+import Cart from "./Cart"
 function App()
 {
   return (
@@ -12,6 +13,7 @@ function App()
       <div className="container">
         <Size/>
         <Products/>
+        <Cart/>
       </div>
     </Provider>
   )

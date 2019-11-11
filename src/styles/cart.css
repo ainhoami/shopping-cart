@@ -1,12 +1,19 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .container{
     display:flex;
     flex-direction: row;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width:1300px;
     margin:auto;
 
 }
 
+.sizes{
+    width:250px;
+    border:1px solid green;
+}
 
 
 .products{
@@ -51,31 +58,33 @@ border:1px solid transparent;
 }
 
 .cartContainer{
-    width:450px;
+     /* width:450px; */
     position: fixed;
     right:0;
     height: 100%;
-    /* float:right; */
+    float:right;
     z-index: 10px;
     color:white;
-    background-color: black;
-    border:1px solid green;
+    background-color: transparent; 
+    /* border:1px solid green; */
+     /* display:none;  */
     
 }
 .cartSections{
-    height: 100%;
+width:450px;
+height: 100%;
 overflow-y: scroll;
 display: block;
-background-color: black;;
+background-color: #222;
 }
-.cartSections header{
+/* .cartSections header{
     display: block;
-    border:1px solid red;
-}
+    /* border:1px solid red; */
+/* } */ 
 .cartSections .cartItems{
     position:relative;
     /* border:1px solid green; */
-    min-heigh:280px;
+    /* min-height:280px; */
     padding-bottom:200px;
 }
 .cartSections footer{
@@ -84,11 +93,13 @@ background-color: black;;
     height:200px;
     width:100%;
     display:block;
-    background-color: black;;
-    border:1px solid yellow;
+    background-color: #222;
+    border-top: 1px solid black;
+    padding-top: 10px;;
+
 }
 
-/* Track */
+
 .cartSections::-webkit-scrollbar {
     width: 10px;
   }
@@ -97,7 +108,202 @@ background-color: black;;
     background: #444; 
   }
    
-  /* Handle */
+  
   .cartSections::-webkit-scrollbar-thumb {
     background: #000; 
   }
+
+  .cartOpened{
+      position: absolute;
+      width:75px;
+      height:75px;
+      top:0;
+      right:0;
+      background-color:#222;
+      text-align: center;
+      padding-top:20px;;
+      
+  }
+
+  .cartOpened i{
+      font-size: 40px;
+      color:white;
+   
+  }
+  p.totalItems, .totalItemsup{
+    background-color: #eabf00;
+    height:25px;
+    width: 25px;
+    /* border:1px solid red; */
+    border-radius: 45%;
+    margin:4px 0 0 12px;
+    font-size: 20px;
+    /* z-index: 10px;; */
+    color:black;
+  }
+
+  .square{
+    font-size: 25px;
+    position: absolute;
+    width:50px;
+    height:50px;
+    top:0;
+    left:-50px;
+    color:white;
+    background-color:#222;
+    text-align: center;
+    line-height: 50px;
+}
+
+.closed{
+    display:none;
+}
+
+ .opened{display:block}
+
+ header{
+     display: flex;
+     width:140px;
+     margin:auto;
+     flex-wrap: wrap;
+     flex-direction: row;
+     align-items: center;
+     /* border:1px solid orange; */
+
+ }
+ header i.cartopen{
+    font-size: 50px;
+    color:white;
+    width:80px;
+    height: 80px;
+ }
+.totalItemsup{
+text-align: center;
+width:20px;
+height:20px;
+border-radius: 45%;
+ margin:0 15px;
+ font-size: 17px;
+}
+
+
+ header>p{
+     padding: 0;
+     margin:0;
+     color:white;
+     height:40px;
+     line-height: 40px;;
+     width: 50px;
+     font-weight: bold;
+     /* border:1px solid red; */
+ }
+
+ .oneItem{
+     display: flex;
+     justify-content: space-between;
+     margin:15px 7px;
+     border-top:1px solid black;
+ }
+
+ img.smallImg{
+     width:70px;
+     margin-top: 15px;
+ }
+ .productDetails{
+     width:290px;
+    
+ }
+ .productDetails p{
+     padding: 0;
+     margin:5px 0;
+     margin-top: 15px;
+
+   
+ }
+
+ .productDetails p:nth-child(2), .productDetails p:nth-child(3), footer div>p:first-child, footer div>p:nth-child(2) 
+ {
+     color:#aaa;
+ }
+
+ .buttons{
+     display:flex;
+     flex-direction: column;
+     justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 15px;
+
+
+ }
+button.xclose{
+    background-color: #222;
+    border: none;
+    font-weight: bold;
+    color:black;
+    width:25px;
+    cursor: pointer;
+
+}
+
+div.buttons>p{
+    color:#eabf00;
+}
+
+div.plmin button{
+    background-color: black;
+    border: none;
+    color:white;
+    width:25px;
+    height: 25px;
+    margin:0 1px;
+    cursor: pointer;
+
+}
+
+
+footer div{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;;
+    
+}
+
+
+
+.subt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    
+   
+
+
+}
+
+.subt p{
+    padding:0;
+    margin:0;
+}
+
+.subt>p:first-child{
+    color:#eabf00;
+    font-size: 25px;
+
+}
+
+footer button{
+    background-color:black;
+    border:none;
+    width:420px;
+    height: 30px;
+    color:white;
+    margin:25px 10px;
+}
+
+button:focus{
+    outline: none;
+}
+
+
+

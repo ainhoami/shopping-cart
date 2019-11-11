@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import { useShop } from "../redux/ducks/cart"
-// const {add}=useShop()
+
 
 export default function (props){
     const { prods, addProd, prodsCart } = useShop()
+    
     
 
     function installments (number, price){
@@ -11,8 +12,9 @@ export default function (props){
     }
 
 function handleClick(id){
-
+addProd(id)
   }    
+
 
 // console.log(prodsCart)
 return(
@@ -20,7 +22,7 @@ return(
         <header></header>
          <div className="products">
              {prods.map((p,i)=>(
-                 <div key={"prod" + i} className="oneproduct" onClick={e=>addProd(p.id)}>
+                 <div key={"prod" + i} className="oneproduct" onClick={e=>handleClick(p.id)}>
                 <img src={`assets/${p.sku}_1.jpg`}/>
                
                     <p>{p.title}</p>
