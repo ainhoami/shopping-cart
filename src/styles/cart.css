@@ -4,7 +4,6 @@ html{
 .container{
     display:flex;
     flex-direction: row;
-    /* border: 1px solid red; */
     width:1300px;
     margin:auto;
 
@@ -12,7 +11,6 @@ html{
 
 .sizes{
     width:250px;
-    border:1px solid green;
 }
 
 
@@ -20,7 +18,6 @@ html{
     display:flex;
     flex-wrap: wrap;
     width:1050px;
-    border:1px solid black;
 }
 
 .products:hover{
@@ -29,12 +26,11 @@ html{
 }
 
 .oneproduct:hover button.btn{
-    background:rgb(207, 122, 23);
+    background:#eabf00;
     cursor: pointer;
 }
 
 .right{
-    border:1px solid pink;
     width:1060px;
     display: flex;
     flex-direction: column;
@@ -42,14 +38,51 @@ html{
 }
 
 .oneproduct{
-width:252px;
-margin:10px 3px;
-padding:10px;
-border:1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:252px;
+    margin:10px 3px;
+    padding:5px 10px;
+    border:1px solid transparent;
 
 
 }
 
+.oneproduct p{
+    margin:10px 0;
+    padding: 0;
+}
+
+.uine{
+    width:35px;
+    margin:15px 0;
+    border-bottom: 1px solid orange;
+}
+
+.priceandinstallm{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+
+}
+.priceandinstallm p{
+    padding: 0;
+    margin:0;
+}
+
+
+
+button.btn{
+    margin:20px 0 5px 0;
+    width:245px;
+    height:55px;
+    background-color: black;
+    color:white;
+    border:none
+
+}
 .oneproduct:hover{
     border:1px solid #ddd;
 }
@@ -58,7 +91,7 @@ border:1px solid transparent;
 }
 
 .cartContainer{
-     /* width:450px; */
+    
     position: fixed;
     right:0;
     height: 100%;
@@ -66,8 +99,7 @@ border:1px solid transparent;
     z-index: 10px;
     color:white;
     background-color: transparent; 
-    /* border:1px solid green; */
-     /* display:none;  */
+   
     
 }
 .cartSections{
@@ -77,14 +109,10 @@ overflow-y: scroll;
 display: block;
 background-color: #222;
 }
-/* .cartSections header{
-    display: block;
-    /* border:1px solid red; */
-/* } */ 
+
 .cartSections .cartItems{
     position:relative;
-    /* border:1px solid green; */
-    /* min-height:280px; */
+   
     padding-bottom:200px;
 }
 .cartSections footer{
@@ -134,11 +162,9 @@ background-color: #222;
     background-color: #eabf00;
     height:25px;
     width: 25px;
-    /* border:1px solid red; */
     border-radius: 45%;
     margin:4px 0 0 12px;
     font-size: 20px;
-    /* z-index: 10px;; */
     color:black;
   }
 
@@ -161,14 +187,14 @@ background-color: #222;
 
  .opened{display:block}
 
- header{
+ /* cart header */
+ header{ 
      display: flex;
      width:140px;
      margin:auto;
      flex-wrap: wrap;
      flex-direction: row;
      align-items: center;
-     /* border:1px solid orange; */
 
  }
  header i.cartopen{
@@ -195,7 +221,6 @@ border-radius: 45%;
      line-height: 40px;;
      width: 50px;
      font-weight: bold;
-     /* border:1px solid red; */
  }
 
  .oneItem{
@@ -217,6 +242,7 @@ border-radius: 45%;
      padding: 0;
      margin:5px 0;
      margin-top: 15px;
+     font-size: 16px;
 
    
  }
@@ -281,6 +307,12 @@ footer div{
 
 }
 
+span.availableS{
+    border-right:1px solid #555;
+    width:auto;
+    padding-right: 3px;
+}
+
 .subt p{
     padding:0;
     margin:0;
@@ -306,4 +338,44 @@ button:focus{
 }
 
 
+p.grey{
+    color:#999;
+    font-weight: bold;
+}
+p.orange{
+    color:black;
+    font-weight: bold;
+    font-size:20px ;
+}
 
+div.header{
+    display:flex;
+    justify-content: space-between;
+    margin:10px 0;
+}
+select#order{
+    margin:10px 5px;
+}
+
+.sizes ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.sizes ul li{
+    margin:5px 5px;
+    padding: 10px;
+    width:45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ddd;
+    text-align: center;
+    line-height: 25px;
+    font-size: 13px;
+}
+
+.sizes ul li:hover{
+    border:1px solid black;
+}

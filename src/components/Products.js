@@ -3,7 +3,7 @@ import { useShop } from "../redux/ducks/cart"
 
 
 export default function (props){
-    const { prods, addProd, prodsCart } = useShop()
+    const { prods, addProd } = useShop()
     
     
 
@@ -19,7 +19,20 @@ addProd(id)
 // console.log(prodsCart)
 return(
     <div className="right">
-        <header></header>
+        <div className="header">
+            <p>{prods.length} Product(s) found.</p>
+            <div>
+            <label id="order">
+                order by
+            </label>
+            <select id="order">
+            <option selected >select</option> 
+        <option value="lowest" >Lowest to highest </option> 
+        <option value="high">Highest to lowest</option>
+            </select>
+            </div>
+           
+        </div>
          <div className="products">
              {prods.map((p,i)=>(
                  <div key={"prod" + i} className="oneproduct" onClick={e=>handleClick(p.id)}>
@@ -27,8 +40,10 @@ return(
                
                     <p>{p.title}</p>
                     <div className="uine"></div>
-                    <p>{parseFloat(p.price).toFixed(2)}</p>
-                    <p>{installments(p.installments, p.price)}</p>
+                    <div className="priceandinstallm">
+                        <p className="orange">{parseFloat(p.price).toFixed(2)}</p>
+                        <p className="grey">{installments(p.installments, p.price)}</p>
+                    </div>
                     <button className="btn">Add to cart</button>
 
                 </div>

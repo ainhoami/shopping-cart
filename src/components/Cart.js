@@ -12,7 +12,6 @@ let arrayinstall =[]
  prodsCart.map(e=>{
     arrayinstall.push(e.installments)
 })
-console.log(Math.max(...arrayinstall))
 function installments(number, subtotal){
     if (subtotal!=0)
     {
@@ -42,7 +41,7 @@ function installments(number, subtotal){
 
                      <div className="productDetails">
                         <p >{p.title}</p>
-                        <p>{p.description}</p>
+                        <p><span className="availableS">{p.availableSizes.join(", ")}</span> {p.style}</p>
                         <p>Quantity: {p.quantity}</p>
                     </div>
                     

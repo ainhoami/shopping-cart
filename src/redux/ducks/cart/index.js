@@ -114,7 +114,6 @@ export function useShop(){
     useEffect(() => {
         fetch()
       }, [])
-    //   console.log(prodsCart)
       return { prods, addProd, prodsCart, subsIt, deleteProduct }
      
   }
