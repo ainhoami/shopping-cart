@@ -3,7 +3,7 @@ import { useShop } from "../redux/ducks/cart"
 
 
 export default function (props){
-    const { prods, addProd } = useShop()
+    const { prods, addProd, openclose } = useShop()
     
     
 
@@ -13,6 +13,7 @@ export default function (props){
 
 function handleClick(id){
 addProd(id)
+openclose(true)
   }    
 
 
@@ -37,7 +38,7 @@ return(
              {prods.map((p,i)=>(
                  <div key={"prod" + i} className="oneproduct" onClick={e=>handleClick(p.id)}>
                 <img src={`assets/${p.sku}_1.jpg`}/>
-               
+               <div className={p.isFreeShipping? "freeShipping": "freeShipping closed"}>Free Shipping</div>
                     <p>{p.title}</p>
                     <div className="uine"></div>
                     <div className="priceandinstallm">

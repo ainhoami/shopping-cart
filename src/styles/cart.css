@@ -379,3 +379,12 @@ select#order{
 .sizes ul li:hover{
     border:1px solid black;
 }
+
+div.freeShipping{
+    position:absolute;
+    margin-left: 60px;
+    z-index: 10;
+    background-color: black;
+    color:white;
+}
+

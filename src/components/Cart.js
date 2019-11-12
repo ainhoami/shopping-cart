@@ -4,9 +4,10 @@ import "font-awesome/css/font-awesome.min.css"
 
 
 export default function (props){
-    const { addProd, prodsCart, subsIt, deleteProduct } = useShop()
-    const [open, setOpen]=useState(false)
-    
+    const { addProd, prodsCart, subsIt, deleteProduct , openclose, openc} = useShop()
+    // const [open, setOpen]=useState(false)
+    // const {cart, openCart, closeCart} = useCart()
+
 
 let arrayinstall =[]
  prodsCart.map(e=>{
@@ -20,11 +21,13 @@ function installments(number, subtotal){
     
 
 }
+// openclose(true)
+console.log(openc+ " openclose")
     return(
         
 <div className= "open cartContainer">
         
-         <div className={open?"open cartSections": "closed cartSection"}>
+         <div className={openc?"open cartSections": "closed cartSection"}>
          <header>
              
          <i className="fa fa-shopping-cart cartopen"><p className="totalItemsup">{prodsCart.reduce((a,b)=>{
@@ -76,7 +79,7 @@ function installments(number, subtotal){
          </footer>
          
          </div>
-         <div className={!open? "opened cartOpened" : "closed cartOpened"} onClick={e=>!open?setOpen(true):setOpen(false)}>
+         <div className={!openc? "opened cartOpened" : "closed cartOpened"} onClick={e=>!openc? openclose(true):openclose(false)}>
          
                 <i className="fa fa-shopping-cart"><p className="totalItems">{prodsCart.reduce((a,b)=>{
                 return a + b.quantity
@@ -84,7 +87,7 @@ function installments(number, subtotal){
                 
         </div>
 
-        <div className={open? "opened square" : "closed square"} onClick={e=>!open?setOpen(true):setOpen(false)}>
+        <div className={openc? "opened square" : "closed square"} onClick={e=>!openc?openclose(true):openclose(false)}>
                 X
         </div>
     </div>

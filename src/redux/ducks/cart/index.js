@@ -1,17 +1,20 @@
 import Axios from "axios"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
-import produce from "immer"
+
 
 const GET_PRODUCTS = "db/GET_PRODUCTS"
 const ADD_ITEMS="cart/ADD_ITEMS"
 const SUBS_ITEMS="cart/SUBS_ITEMS"
 const DELETE_ITEMS="cart/DELETE_ITEMS"
+const OPEN_CART="cart/OPEN_CART"
+// const CLOSE_CART="cart/CLOSE_CART"
 
 
 const initialState = {
     products:[],
-    productsCart:[]
+    productsCart:[],
+    cart: false
 }
 export default function (state = initialState, action){
 
@@ -40,10 +43,27 @@ export default function (state = initialState, action){
             }
         case DELETE_ITEMS:
             return { ...state, productsCart: state.productsCart.filter(e=> e.id!=action.payload.id)}
+
+        case OPEN_CART:
+            return {...state, cart: action.payload}
+
+        // case CLOSE_CART:
+        //     return {...state, cart: false}
                            
         default:
             return state
         }
+
+}
+
+function openC(val){
+    return dispatch=>{
+        dispatch({
+            type: OPEN_CART,
+            payload: val
+
+        })
+    }
 
 }
 
@@ -106,14 +126,16 @@ export function useShop(){
     const dispatch = useDispatch()
     const prods = useSelector(appState => appState.cartReducer.products)
     const prodsCart = useSelector(appState => appState.cartReducer.productsCart)
+    const openc= useSelector(appState => appState.cartReducer.cart)
     const fetch = () => dispatch(getProducts())
     const addProd=(id) => dispatch(addToCart(id))
     const subsIt=(id) => dispatch(subsItem(id))
     const deleteProduct=(id) => dispatch(deleteItem(id))
+    const openclose=(val)=>dispatch(openC(val))
     
     useEffect(() => {
         fetch()
       }, [])
-      return { prods, addProd, prodsCart, subsIt, deleteProduct }
+      return { prods, addProd, prodsCart, subsIt, deleteProduct, openclose , openc}
      
   }
